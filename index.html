@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailes</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Ubuntu:wght@400;700&display=swap');
+
+        :root {
+            --tails-orange: #ff8c00;
+            --tails-white: #ffffff;
+            --echo-cyan: #00fbff;
+            --bg-dark: #0a0a0a;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--tails-white);
+            font-family: 'Ubuntu', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* Анимированный фон с частицами */
+        .bg-glow {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, #ff8c0022 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Шапка */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+            border-bottom: 2px solid var(--tails-orange);
+        }
+
+        .nickname {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.5rem;
+            color: var(--tails-orange);
+            text-shadow: 2px 2px #000;
+        }
+
+        /* Главный блок */
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin: 60px 0;
+        }
+
+        .avatar-frame {
+            flex: 0 0 350px;
+            position: relative;
+        }
+
+        .avatar-frame img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 0 30px var(--tails-orange);
+            border: 4px solid var(--tails-white);
+        }
+
+        .info-side h1 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .highlight { color: var(--tails-orange); }
+
+        .about-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #ddd;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-left: 5px solid var(--tails-orange);
+            border-radius: 0 15px 15px 0;
+        }
+
+        /* Цель - Прогресс бар */
+        .goal-section {
+            margin: 50px 0;
+            text-align: center;
+            background: #111;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #333;
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 30px;
+            background: #222;
+            border-radius: 15px;
+            margin: 20px 0;
+            overflow: hidden;
+            border: 2px solid var(--tails-white);
+        }
+
+        .progress-bar {
+            width: 45%; /* Примерный прогресс */
+            height: 100%;
+            background: linear-gradient(90deg, var(--tails-orange), #ffbd69);
+            box-shadow: 0 0 15px var(--tails-orange);
+        }
+
+        /* Кнопки */
+        .btn-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.8rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .btn-yt { background: #ff0000; color: white; }
+        .btn-yt:hover { transform: scale(1.05); box-shadow: 0 0 20px #ff0000; }
+
+        .btn-label { background: var(--echo-cyan); color: #000; }
+        .btn-label:hover { transform: scale(1.05); box-shadow: 0 0 20px var(--echo-cyan); }
+
+        @media (max-width: 850px) {
+            .hero { flex-direction: column; text-align: center; }
+            .avatar-frame { flex: 0 0 250px; }
+            .about-text { border-left: none; border-top: 5px solid var(--tails-orange); }
+            .btn-group { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-glow"></div>
+
+    <div class="container">
+        <header>
+            <div class="nickname">Tailes</div>
+            <div class="echo-logo">
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="avatar-frame">
+                    <img src="photo_2026-03-03_14-06-00.jpg" alt="tailes">
+                </div>
+                <div class="info-side">
+                    <h1>Привет! 👋 Я <span class="highlight">Ай Султан</span></h1>
+                    <div class="about-text">
+                        Я практически с самого детства любил снимать и играть в <strong>Майнкрафт... ⛏️</strong> 
+                        И сейчас, спустя кучу ошибок, я пришёл к вам, чтобы показать нового себя, который намного лучше прошлого! ✨
+                        <br><br>
+                        Я снимаю позитивные и крутые шортсы. Мой путь — это путь качества и честности перед аудиторией.
+                    </div>
+                </div>
+            </section>
+
+            <section class="goal-section">
+                <h2 style="font-family: 'Press Start 2P'; font-size: 1rem;">ЦЕЛЬ: <span class="highlight">10,000</span> ПОДПИСЧИКОВ</h2>
+                <div class="progress-container">
+                    <div class="progress-bar"></div>
+                </div>
+                <p>Помоги мне достичь этой отметки — подпишись на канал!</p>
+                
+                <div class="btn-group">
+                    <a href="https://www.youtube.com/@tailesminecraft" class="btn btn-yt">ПОДПИСАТЬСЯ НА YT</a>
+                </div>
+            </section>
+        </main>
+
+        <footer style="text-align: center; color: #555; margin-top: 50px;">
+            © 2026 Tailes
+        </footer>
+    </div>
+
+</body>
+</html>
